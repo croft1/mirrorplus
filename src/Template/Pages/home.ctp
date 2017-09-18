@@ -48,7 +48,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <?= $this->Html->script('http://code.jquery.com/jquery.min.js'); ?>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
-    <script src="/vendor/simpleweather/jquery.simpleWeather.js" rel="script"></script>
+    <script src="webroot/js/jquery.simpleWeather.js" rel="script"></script>
 </head>
 <body class="home container">
 
@@ -134,7 +134,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             woeid: '',
             unit: 'c',
             success: function(weather) {
-                html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
+                html = '<h3>'+weather.temp+'&deg;'+weather.units.temp+'</h3>';
 
                 $("#weather").html(html);
             },
