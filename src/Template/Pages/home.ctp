@@ -98,7 +98,6 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     </div>
 
     <div class="col-md-6 col-xs-12">
-        <h2>Headlines</h2>
         <?php
         $rss = new DOMDocument();
         $rss->load('http://www.abc.net.au/news/feed/45910/rss.xml');
@@ -121,6 +120,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             echo '<h4><strong><a href="'.$link.'" title="'.$title.'">'.$title.'</a></strong></h4><br/>';
             '<p>'.$description. ':-' . $date . '</p>';
         }
+
         ?>
     </div>
     <div class="col-md-6 col-xs-12">
@@ -144,6 +144,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         }
 
     });
+    var feed = "https://www.reddit.com/r/funny/.rss";
+    JSON.parse(feed);
 </script>
 
 </body>
