@@ -35,6 +35,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="300">
     <title>
         <?= $cakeDescription ?>
     </title>
