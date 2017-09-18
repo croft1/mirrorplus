@@ -75,13 +75,28 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <div class="row">
 
     <div class="col-md-6 col-xs-12">
-        <h2>
-            Weather
-        </h2>
-
         <div id="weather"></div>
+        <script>
+            $(document).ready(function() {
+                $.simpleWeather({
+                    location: 'Melbourne, Australia',
+                    woeid: '',
+                    unit: 'c',
+                    success: function(weather) {
+                        html = '<h1><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h1>';
+                        html += '<h3>Max:'+weather.high+' Min: '+weather.low+'</h3>';
+                        html += '<h4 class="currently">'+weather.currently+', Humidity: ' +weather.humidity+'%</h4>';
 
+                        $("#weather").html(html);
+                    },
+                    error: function(error) {
+                        $("#weather").html('<p>'+error+'</p>');
+                    }
+                });
+            });
+        </script>
     </div>
+
     <div class="col-md-6 col-xs-12">
         <h2>News</h2>
         <div class="row">
@@ -127,22 +142,6 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
     });
 </script>
-<script>
-    $(document).ready(function() {
-        $.simpleWeather({
-            location: 'Melbourne, Australia',
-            woeid: '',
-            unit: 'c',
-            success: function(weather) {
-                html = '<h3>'+weather.temp+'&deg;'+weather.units.temp+'</h3>';
 
-                $("#weather").html(html);
-            },
-            error: function(error) {
-                $("#weather").html('<p>'+error+'</p>');
-            }
-        });
-    });
-</script>
 </body>
 </html>
