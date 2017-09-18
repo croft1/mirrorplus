@@ -125,6 +125,14 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     </div>
     <div class="col-md-6 col-xs-12">
         <h2>Memes</h2>
+        <?php
+
+        $rss = new DOMDocument();
+        $rss->load('https://www.reddit.com/r/funny/.rss');
+        $feed = array();
+        
+
+        ?>
     </div>
     <div class="col-md-6 col-xs-12">
         <h2>Cryptocurrencies</h2>
@@ -144,8 +152,9 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         }
 
     });
-    var feed = "https://www.reddit.com/r/funny/.rss";
-    JSON.parse(feed);
+
+
+
 </script>
 
 </body>
