@@ -49,22 +49,88 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 </head>
 <body class="home container">
 
-<header class="row">
+<header class="row ">
     <div class="header- text-center">
-        <h1>Hello, Michael</h1>
+        <h6><a href="http://www.mewc.info">Welcome to mirrorplus</a></h6>
     </div>
 </header>
 
+<div class="col-md-6 col-xs-12">
+<!--https://time.is/widgets/East_Malvern-->
+    <a href="https://time.is/Melbourne" id="time_is_link" rel="nofollow" style="font-size:36px"></a>
+    <a href="https://time.is/Glen_iris" id="time_is_link" rel="nofollow" style="font-size:36px"></a>
+        <h1><span id="Melbourne_z609" ></span></h1>
+</div>
+<hr class="white">
+    <div class="col-md-12 col-xs-12 text-center">
+        <h2><span id="Glen_iris_z609"></span></h2>
+            <br/>
+    </div>
 <hr class="white">
 
+
 <div class="row">
-    <h2 class="col-md-6 col-xs-12">Weather</h2>
-    <h2 class="col-md-6 col-xs-12">News</h2>
-    <h2 class="col-md-6 col-xs-12">Date & Time</h2>
-    <h2 class="col-md-6 col-xs-12">Social Media</h2>
-    <h2 class="col-md-6 col-xs-12">Memes</h2>
-    <h2 class="col-md-6 col-xs-12">Cryptocurrencies</h2>
+
+    <div class="col-md-6 col-xs-12">
+        <h2>
+            Weather
+        </h2>
+
+        <?php
+        $jsonurl = "http://api.openweathermap.org/data/2.5/weather?q=London,uk";
+        $json = file_get_contents($jsonurl);
+
+        $weather = json_decode($json);
+        $kelvin = $weather->main->temp;
+        $celcius = $kelvin - 273.15;
+        echo $celcius;
+        ?>
+
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <h2>News</h2>
+        <div class="row">
+            news sroty
+        </div>
+        <div class="row">
+            news sroty
+        </div>
+        <div class="row">
+            news sroty
+        </div>
+        <div class="row">
+            news sroty
+        </div>
+        <div class="row">
+            news sroty
+        </div>
+        <div class="row">
+            news sroty
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <h2>Memes</h2>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <h2>Cryptocurrencies</h2>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <h2>News</h2>
+    </div>
 </div>
 
+<script src="//widget.time.is/en.js"></script>
+<script>
+    time_is_widget.init({
+        Melbourne_z609:{},
+        Glen_iris_z609 : {
+            template: "DATE",
+            sun_format: "srhour:srminute",
+            date_format:"dayname, monthname dnum, year",
+            coords: "40.71427,-74.00597"
+        }
+
+    });
+</script>
 </body>
 </html>
