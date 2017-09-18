@@ -403,7 +403,7 @@ abstract class Association
                 $registryAlias = $this->_name;
             }
 
-            $tableLocator = $this->tableLocator();
+            $tableLocator = $this->getTableLocator();
 
             $config = [];
             $exists = $tableLocator->exists($registryAlias);

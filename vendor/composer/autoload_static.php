@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3
+class ComposerStaticInit3d7a1119b8393193af7272c4467d7cbc
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -52,6 +52,7 @@ class ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3
         'M' => 
         array (
             'Migrations\\' => 11,
+            'M1\\Env\\' => 7,
         ),
         'J' => 
         array (
@@ -72,11 +73,10 @@ class ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3
             'Cake\\Composer\\' => 14,
             'Cake\\Chronos\\' => 13,
             'Cake\\' => 5,
+            'CakePHP\\' => 8,
         ),
         'B' => 
         array (
-            'Bootstrap\\' => 10,
-            'BootstrapUI\\' => 12,
             'Bake\\' => 5,
         ),
         'A' => 
@@ -84,7 +84,6 @@ class ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3
             'Aura\\Intl\\' => 10,
             'App\\Test\\' => 9,
             'App\\' => 4,
-            'Ajax\\' => 5,
         ),
     );
 
@@ -169,6 +168,10 @@ class ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3
         array (
             0 => __DIR__ . '/..' . '/cakephp/migrations/src',
         ),
+        'M1\\Env\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/m1/env/src',
+        ),
         'JsonSchema\\' => 
         array (
             0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
@@ -213,13 +216,9 @@ class ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3
         array (
             0 => __DIR__ . '/..' . '/cakephp/cakephp/src',
         ),
-        'Bootstrap\\' => 
+        'CakePHP\\' => 
         array (
-            0 => __DIR__ . '/..' . '/holt59/cakephp3-bootstrap-helpers/src',
-        ),
-        'BootstrapUI\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/friendsofcake/bootstrap-ui/src',
+            0 => __DIR__ . '/..' . '/cakephp/cakephp-codesniffer/CakePHP',
         ),
         'Bake\\' => 
         array (
@@ -237,13 +236,17 @@ class ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'Ajax\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dereuromark/cakephp-ajax/src',
-        ),
     );
 
     public static $prefixesPsr0 = array (
+        'j' => 
+        array (
+            'josegonzalez\\Dotenv' => 
+            array (
+                0 => __DIR__ . '/..' . '/josegonzalez/dotenv/src',
+                1 => __DIR__ . '/..' . '/josegonzalez/dotenv/tests',
+            ),
+        ),
         'J' => 
         array (
             'JakubOnderka\\PhpConsoleHighlighter' => 
@@ -272,10 +275,10 @@ class ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitb70345aed3fb96b5a573f5ce182ac2a3::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3d7a1119b8393193af7272c4467d7cbc::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3d7a1119b8393193af7272c4467d7cbc::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3d7a1119b8393193af7272c4467d7cbc::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit3d7a1119b8393193af7272c4467d7cbc::$classMap;
 
         }, null, ClassLoader::class);
     }
