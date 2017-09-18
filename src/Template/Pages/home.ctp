@@ -45,7 +45,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <!--    < ?= $this->Html->css('home.css') ?>-->
     <?= $this->Html->css('bootstrap.css') ?>
     <?= $this->Html->css('customised.css') ?>
+    <?= $this->Html->script('http://code.jquery.com/jquery.min.js'); ?>
+
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
+    <script src="/vendor/simpleweather/jquery.simpleWeather.js" rel="script"></script>
 </head>
 <body class="home container">
 
@@ -76,15 +79,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             Weather
         </h2>
 
-        <?php
-        $jsonurl = "http://api.openweathermap.org/data/2.5/weather?q=London,uk";
-        $json = file_get_contents($jsonurl);
-
-        $weather = json_decode($json);
-        $kelvin = $weather->main->temp;
-        $celcius = $kelvin - 273.15;
-        echo $celcius;
-        ?>
+        <div id="weather"></div>
 
     </div>
     <div class="col-md-6 col-xs-12">
@@ -130,6 +125,23 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             coords: "40.71427,-74.00597"
         }
 
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $.simpleWeather({
+            location: 'Melbourne, Australia',
+            woeid: '',
+            unit: 'c',
+            success: function(weather) {
+                html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
+
+                $("#weather").html(html);
+            },
+            error: function(error) {
+                $("#weather").html('<p>'+error+'</p>');
+            }
+        });
     });
 </script>
 </body>
