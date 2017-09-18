@@ -128,6 +128,33 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     </div>
     <div class="col-md-6 col-xs-12">
         <h2>Cryptocurrencies</h2>
+        <table>
+            <tr>
+                <th>Bitcoin</th>
+                <th>Ethereum</th>
+                <th>Litecoin</th>
+            </tr>
+            <tr>
+                <td><?php
+                    $tick = file_get_contents('https://api.coinmarketcap.com/v1/ticker/bitcoin//?convert=AUD');
+                    $data = json_decode($tick, TRUE);
+                    $usd = $data[0]["price_aud"];
+                    echo round($usd, 2) . 'AUD';
+                    ?></td>
+                <td><?php
+                    $tick = file_get_contents('https://api.coinmarketcap.com/v1/ticker/ethereum//?convert=AUD');
+                    $data = json_decode($tick, TRUE);
+                    $usd = $data[0]["price_aud"];
+                    echo round($usd, 2) . 'AUD';
+                    ?></td>
+                <td><?php
+                    $tick = file_get_contents('https://api.coinmarketcap.com/v1/ticker/litecoin//?convert=AUD');
+                    $data = json_decode($tick, TRUE);
+                    $usd = $data[0]["price_aud"];
+                    echo round($usd, 2) . 'AUD';
+                    ?></td>
+            </tr>
+        </table>
     </div>
 
 </div>
