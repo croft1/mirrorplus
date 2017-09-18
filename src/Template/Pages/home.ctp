@@ -58,27 +58,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <hr class="white">
 
 <div class="row">
-    <h2>Weather</h2>
-</div>
-
-<div class="row">
-    <h2>News</h2>
-</div>
-
-<div class="row">
-    <h2>Date & Time</h2>
-</div>
-
-<div class="row">
-    <h2>Social Media</h2>
-</div>
-
-<div class="row">
-    <h2>Memes</h2>
-</div>
-
-<div class="row">
-    <h2>Cryptocurrencies</h2>
+    <h2 class="col-md-6 col-xs-12">Weather</h2>
+    <h2 class="col-md-6 col-xs-12">News</h2>
+    <h2 class="col-md-6 col-xs-12">Date & Time</h2>
+    <h2 class="col-md-6 col-xs-12">Social Media</h2>
+    <h2 class="col-md-6 col-xs-12">Memes</h2>
+    <h2 class="col-md-6 col-xs-12">Cryptocurrencies</h2>
 </div>
 
 </body>
